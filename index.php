@@ -7,7 +7,15 @@
     <title>School System</title>
 </head>
 <body>
-    <h1>New system school</h1>
+    <header>
+        <h1>New system school</h1>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+    </footer>
+    
     
 </body>
 </html>
