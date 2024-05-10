@@ -18,12 +18,37 @@
 //vytvoreny dotaz na tabulku student
     $sql = "SELECT first_name, second_name FROM student";
 
-//odosleme dotaz na databazu    
+//odosleme dotaz na databazu a ta mi vrati objekt result    
     $result = mysqli_query($conn, $sql);
 
-//
+//prevediem si objekt na pole
     $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    print_r($students);
-
-
+  
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of students</title>
+</head>
+<body>
+    <header>
+        <h1>List of students</h1>
+    </header>
+    <main>
+        <?php if(empty($students)): ?>
+            <p>The list of students is empty!!!</p>
+        <?php else: ?>
+            <ul>
+                <?php foreach ($students as $one_student): ?>
+                    <li><?= $one_student["first_name"]." ".$one_student["second_name"]; ?></li>
+                <?php endforeach; ?> 
+            </ul>
+        <?php endif; ?>    
+    </main>
+    <footer></footer>
+    
+</body>
+</html>
