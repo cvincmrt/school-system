@@ -21,7 +21,7 @@
 //odosleme dotaz na databazu a ta mi vrati objekt result    
     $result = mysqli_query($conn, $sql);
 
-//prevediem si objekt na pole
+//prevediem si objekt na pole v poli
     $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
   
 ?>
