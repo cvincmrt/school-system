@@ -13,7 +13,7 @@
         exit();
     }
 
-    echo "Database connected...";
+    //echo "Database connected...";
 
 //vytvoreny dotaz na tabulku student
     $sql = "SELECT first_name, second_name FROM student";
@@ -48,7 +48,9 @@
             </ul>
         <?php endif; ?>    
     </main>
-    <footer></footer>
+    <footer>
+        <a href="index.php">Back to homepage</a>
+    </footer>
     
 </body>
 </html>
