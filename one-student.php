@@ -21,10 +21,14 @@
 //odosleme dotaz na databazu a ta mi vrati objekt result    
     $result = mysqli_query($conn, $sql);
 
+//ak mi v result bude false vypis mi poslednu chybovu hlasku     
+    if ($result === false) {
+        echo mysqli_error($conn);
+    }else{
 //prevediem si objekt na assoc. pole s jednym zaznamom
-    $students = mysqli_fetch_assoc($result);
-    var_dump($students);
-  
+        $students = mysqli_fetch_assoc($result);
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
