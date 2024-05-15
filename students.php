@@ -16,7 +16,7 @@
     //echo "Database connected...";
 
 //vytvoreny dotaz na tabulku student
-    $sql = "SELECT id, first_name, second_name FROM student";
+    $sql = "SELECT * FROM student";
 
 //odosleme dotaz na databazu a ta mi vrati objekt result    
     $result = mysqli_query($conn, $sql);
@@ -47,7 +47,7 @@
         <?php else: ?>
             <ul>
                 <?php foreach ($students as $one_student): ?>
-                    <li><?= $one_student["first_name"]." ".$one_student["second_name"]." "; ?><a href="one-student.php?id=<?php echo $one_student["id"]; ?>">More infor...</a></li>
+                    <li><?= $one_student["first_name"]." ".$one_student["second_name"]." "; ?><a href="one-student.php?id=<?php echo $one_student['id']; ?>">More infor...</a></li>
                 <?php endforeach; ?> 
             </ul>
         <?php endif; ?>    

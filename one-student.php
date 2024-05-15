@@ -16,27 +16,28 @@
     //echo "Database connected...";
 
 //vytvoreny dotaz na tabulku student
-if(isset($_GET["id"])){
-    $id = $_GET["id"];
+//isset skontroluje ci dane id bolo nastavene a is_numeric skontroluje ci id je cislo
 
-    $sql = "SELECT * FROM student WHERE id = $id";
+    if(isset($_GET["id"]) and is_numeric($_GET["id"])){
 
-    /*co sa stane ak zadam id=100 a take nemam? Stane sa to ze navratova hodnota bude NULL preto to musim pri vypise 
-    do stranky osetrit*/
+        $sql = "SELECT * FROM student WHERE id =".$_GET["id"];
 
-//odosleme dotaz na databazu a ta mi vrati objekt result    
-    $result = mysqli_query($conn, $sql);
+        /*co sa stane ak zadam id=100 a take nemam? Stane sa to ze navratova hodnota bude NULL preto to musim pri vypise 
+        do stranky osetrit*/
 
-//ak mi v result bude false vypis mi poslednu chybovu hlasku     
-    if ($result === false) {
-        echo mysqli_error($conn);
+    //odosleme dotaz na databazu a ta mi vrati objekt result    
+        $result = mysqli_query($conn, $sql);
+
+    //ak mi v result bude false vypis mi poslednu chybovu hlasku     
+        if ($result === false) {
+            echo mysqli_error($conn);
+        }else{
+    //prevediem si objekt na assoc. pole s jednym zaznamom
+            $students = mysqli_fetch_assoc($result);
+        }
     }else{
-//prevediem si objekt na assoc. pole s jednym zaznamom
-        $students = mysqli_fetch_assoc($result);
+        echo "Wrong id";
     }
-}
-
-   
 
 ?>
 <!DOCTYPE html>
