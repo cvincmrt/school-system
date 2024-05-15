@@ -1,9 +1,23 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+       $firstName = $_POST['firstName'];
+       $secondName = $_POST['secondName'];
+       $studentAge = $_POST['studentAge'];
+       $studentData =  $_POST['studentData'];
+       $studentCollage = $_POST['studentCollage'];
        
-       
-       
-        $sql = "INSERT INTO student (first_name, second_name, age, life) VALUES ('Martin','Hruska',100,'informacie o skole','Nebelvir')";
+       require "assets/database.php";
+
+       $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES ('$firstName', '$secondName', '$studentAge', '$studentData', '$studentCollage')";
+       var_dump($sql);
+       exit;
+       $result = mysqli_query($conn,$sql);
+
+       if ($result) {
+        echo "ok";
+       }else{
+        echo "prdel";
+       }
 
 
     }
