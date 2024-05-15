@@ -1,19 +1,5 @@
 <?php
-    $db_host = "localhost";
-    $db_user = "cvincmrt";
-    $db_password = "Cisco1234";
-    $db_name = "skola";
-
-
-    $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-    
-//vracia popis poslednej chyby prihlasenia - ak je tam neaky text je to true inak false
-    if(mysqli_connect_error()){
-        echo mysqli_connect_error();
-        exit();
-    }
-
-    //echo "Database connected...";
+require "assets/database.php";
 
 //vytvoreny dotaz na tabulku student
     $sql = "SELECT * FROM student";
@@ -35,13 +21,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>List of students</title>
 </head>
 <body>
-    <header>
-        <h1>List of students</h1>
-    </header>
+    <?php require "assets/header.php"; ?>
     <main>
+        <section-main-title>
+            <h2>List of students</h2>
+        </section>
+
         <?php if(empty($students)): ?>
             <p>The list of students is empty!!!</p>
         <?php else: ?>
@@ -52,9 +41,8 @@
             </ul>
         <?php endif; ?>    
     </main>
-    <footer>
-        <a href="index.php">Back to homepage</a>
-    </footer>
-    
+    <?php require "assets/footer.php"; ?>
+    <a href="index.php">Back to homepage</a>
+   
 </body>
 </html>

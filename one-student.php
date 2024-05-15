@@ -1,19 +1,5 @@
 <?php
-    $db_host = "localhost";
-    $db_user = "cvincmrt";
-    $db_password = "Cisco1234";
-    $db_name = "skola";
-
-
-    $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-    
-//vracia popis poslednej chyby prihlasenia - ak je tam neaky text je to true inak false
-    if(mysqli_connect_error()){
-        echo mysqli_connect_error();
-        exit();
-    }
-
-    //echo "Database connected...";
+require "assets/database.php";
 
 //vytvoreny dotaz na tabulku student
 //isset skontroluje ci dane id bolo nastavene a is_numeric skontroluje ci id je cislo
@@ -49,10 +35,12 @@
     <title>List of students</title>
 </head>
 <body>
-    <header>
-        <h1>Student data</h1>
-    </header>
+    <?php require "assets/header.php"; ?>
     <main>
+        <section-main-title>
+            <h2>Student data</h2>
+        </section>
+
         <section>
             <?php if($students === NULL): ?>
                 <p>Student does not exist!!!</p>
@@ -64,9 +52,9 @@
             <?php endif; ?>    
         </section>
     </main>
-    <footer>
-        <a href="index.php">Back to homepage</a>
-    </footer>
+    <?php require "assets/footer.php"; ?>
+    <a href="index.php">Back to homepage</a>
+   
     
 </body>
 </html>

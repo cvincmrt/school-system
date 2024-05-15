@@ -7,16 +7,18 @@
     <title>School System</title>
 </head>
 <body>
-    <header>
-        <h1>New system school</h1>
-    </header>
+    <?php require "assets/header.php"; ?>
     <main>
+        <section-main-title>
+            <h2>New system school</h2>
+        </section>
+
         <section>
+
             <a href="students.php">List of students</a>
         </section>
     </main>
-    <footer>
-    </footer>
+    <?php require "assets/footer.php"; ?>
     
     
 </body>
