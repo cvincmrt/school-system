@@ -16,7 +16,10 @@
     //echo "Database connected...";
 
 //vytvoreny dotaz na tabulku student
-    $sql = "SELECT * FROM student WHERE id = 1";
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+
+    $sql = "SELECT * FROM student WHERE id = $id";
 
     /*co sa stane ak zadam id=100 a take nemam? Stane sa to ze navratova hodnota bude NULL preto to musim pri vypise 
     do stranky osetrit*/
@@ -31,6 +34,9 @@
 //prevediem si objekt na assoc. pole s jednym zaznamom
         $students = mysqli_fetch_assoc($result);
     }
+}
+
+   
 
 ?>
 <!DOCTYPE html>
@@ -54,8 +60,6 @@
                 <p>Age:<?php echo $students["age"]; ?></p>
                 <p>Additional information:<?php echo $students["life"]; ?></p>
                 <p>Residence:<?php echo $students["collage"]; ?></p>
-                
-
             <?php endif; ?>    
         </section>
     </main>
