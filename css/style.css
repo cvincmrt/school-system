@@ -9,3 +9,9 @@ p{
     color: red;
     margin-top: 10px;
 }
+.row{
+    margin-top: 15px;
+}
+label{
+    margin-bottom: 2px;
+}
