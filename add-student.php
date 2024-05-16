@@ -1,5 +1,6 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+      
        $formFirstName = $_POST['formFirstName'];
        $formSecondName = $_POST['formSecondName'];
        $formAge = $_POST['formAge'];
@@ -9,23 +10,18 @@
        require "assets/database.php";
 
        $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES ('$formFirstName', '$formSecondName', '$formAge', '$formLife', '$formCollage')";
-       var_dump($sql);
-       exit;
+      
        $result = mysqli_query($conn,$sql);
 
-       if ($result) {
-        echo "ok";
+       if ($result === false) {
+            echo mysqli_error($conn);
        }else{
-        echo "prdel";
+//id posledneho ulozeneho zaznamu do databazy
+        $last_id = mysqli_insert_id($conn);
+            echo "Student was saved with id = $last_id";
        }
 
-
     }
-
-
-
-
-
 ?>
 
 
