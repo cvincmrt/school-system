@@ -1,14 +1,14 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-       $firstName = $_POST['firstName'];
-       $secondName = $_POST['secondName'];
-       $studentAge = $_POST['studentAge'];
-       $studentData =  $_POST['studentData'];
-       $studentCollage = $_POST['studentCollage'];
+       $formFirstName = $_POST['formFirstName'];
+       $formSecondName = $_POST['formSecondName'];
+       $formAge = $_POST['formAge'];
+       $formLife =  $_POST['formLife'];
+       $formCollage = $_POST['formCollage'];
        
        require "assets/database.php";
 
-       $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES ('$firstName', '$secondName', '$studentAge', '$studentData', '$studentCollage')";
+       $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES ('$formFirstName', '$formSecondName', '$formAge', '$formLife', '$formCollage')";
        var_dump($sql);
        exit;
        $result = mysqli_query($conn,$sql);
@@ -47,24 +47,24 @@
         <section class="add-student-form">
             <form action="#" method="POST">
                 <div class="row">
-                    <label for="firstName">First name</label><br>
-                    <input type="text" name="firstName" id="firstName">
+                    <label for="formFirstName">First name</label><br>
+                    <input type="text" name="formFirstName" id="formFirstName">
                 </div>
                 <div class="row">
-                    <label for="secondName">Second name</label><br>
-                    <input type="text" name="secondName" id="secondName">
+                    <label for="formSecondName">Second name</label><br>
+                    <input type="text" name="formSecondName" id="formSecondName">
                 </div>
                 <div class="row">
-                    <label for="studentAge">Age</label><br>
-                    <input type="number" name="studentAge" id="studentAge" min="10">
+                    <label for="formAge">Age</label><br>
+                    <input type="number" name="formAge" id="formtAge" min="10">
                 </div>
                 <div class="row">
-                    <label for="studentCollage">Collage</label><br>
-                    <input type="text" name="studentCollage" id="studentCollage">
+                    <label for="formCollage">Collage</label><br>
+                    <input type="text" name="formCollage" id="formCollage">
                 </div>
                 <div class="row">
-                    <label for="studentData">Life</label><br>
-                    <textarea name="studentData" id="studentData"></textarea>
+                    <label for="formLife">Life</label><br>
+                    <textarea name="formLife" id="formLife"></textarea>
                 </div>
                 <div class="row">
                     <input type="submit" value="Save student" name="saveStudent">
