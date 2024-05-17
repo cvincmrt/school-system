@@ -9,9 +9,19 @@
        
        require "assets/database.php";
 
-       $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES ('$formFirstName', '$formSecondName', '$formAge', '$formLife', '$formCollage')";
-      
-       $result = mysqli_query($conn,$sql);
+//ochrana pred sql injection. Otazniky sluzia ako placeholder, cize kazdy otaznik drzi miesto premennej, ktora sa tam nacita neskor
+       $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES (?, ?, ?, ?, ?)";
+
+//príprava na odoslanie dotazu
+       $statement = mysqli_prepare($conn, $sql);
+       
+//funkcia vymeni otazniky za hodnoty. Musim definovat datove typy stlpcov napr.:first_name je string cize (s), second_name je (s),age je (i)
+       mysqli_stmt_bind_param($statement, "ssiss", $formFirstName, $formSecondName, $formAge, $formLife, $formCollage); 
+
+//odoslanie dotazu
+       mysqli_stmt_execute($statement); 
+
+/*       $result = mysqli_query($conn,$sql);
 
        if ($result === false) {
             echo mysqli_error($conn);
@@ -19,7 +29,7 @@
 //id posledneho ulozeneho zaznamu do databazy
         $last_id = mysqli_insert_id($conn);
             echo "Student was saved with id = $last_id";
-       }
+       }*/
 
     }
 ?>
