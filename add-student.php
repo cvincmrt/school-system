@@ -31,7 +31,8 @@
             //odoslanie dotazu
             if (mysqli_stmt_execute($statement)) {
                     $last_id = mysqli_insert_id($conn);
-                    echo "Student was saved with id = $last_id";
+                    //echo "Student was saved with id = $last_id";
+                    header("Location:one-student.php?id=$last_id");
             }else {
                 echo mysqli_stmt_error($statement);
             }
