@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Pripojenie k databazy
+ * 
+ * @return object - pripojenie do databazy
+ */
+
 function connectionDB() {
     $db_host = "localhost";
     $db_user = "cvincmrt";

@@ -1,4 +1,10 @@
 <?php
+    $formFirstName = null;
+    $formSecondName = null;
+    $formAge = null;
+    $formLife =  null;
+    $formCollage = null;
+
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
       
        $formFirstName = $_POST['formFirstName'];
@@ -8,6 +14,7 @@
        $formCollage = $_POST['formCollage'];
        
        require "assets/database.php";
+       $conn = connectionDB();
 
 //ochrana pred sql injection. Otazniky sluzia ako placeholder, cize kazdy otaznik drzi miesto premennej, ktora sa tam nacita neskor
        $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES (?, ?, ?, ?, ?)";
@@ -54,23 +61,40 @@
             <form action="#" method="POST">
                 <div class="row">
                     <label for="formFirstName">First name</label><br>
-                    <input type="text" name="formFirstName" id="formFirstName" required>
+                    <input type="text"
+                        name="formFirstName"
+                        id="formFirstName"
+                        value="<?php echo $formFirstName; ?>"
+                        required>
                 </div>
                 <div class="row">
                     <label for="formSecondName">Second name</label><br>
-                    <input type="text" name="formSecondName" id="formSecondName" required>
+                    <input type="text" 
+                        name="formSecondName"
+                        id="formSecondName" 
+                        value="<?php echo $formSecondName; ?>"
+                        required>
                 </div>
                 <div class="row">
                     <label for="formAge">Age</label><br>
-                    <input type="number" name="formAge" id="formtAge" min="10" required>
+                    <input type="number" 
+                        name="formAge" 
+                        id="formtAge" 
+                        min="10" 
+                        value="<?php echo $formAge; ?>"
+                        required>
                 </div>
                 <div class="row">
                     <label for="formCollage">Collage</label><br>
-                    <input type="text" name="formCollage" id="formCollage" required>
+                    <input type="text" 
+                    name="formCollage" 
+                    id="formCollage"
+                    value="<?php echo $formCollage; ?>" 
+                    required>
                 </div>
                 <div class="row">
                     <label for="formLife">Life</label><br>
-                    <textarea name="formLife" id="formLife" required></textarea>
+                    <textarea name="formLife" id="formLife" required><?php echo $formLife; ?></textarea>
                 </div>
                 <div class="row">
                     <input type="submit" value="Save student" name="saveStudent">
