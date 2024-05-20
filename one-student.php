@@ -1,10 +1,10 @@
 <?php
 require "assets/database.php";
 $conn = connectionDB();
+require "assets/student.php";
 
     if(isset($_GET["id"]) and is_numeric($_GET["id"])){
-
-        
+        $students = getStudent($conn, $_GET["id"]);
     }else{
         echo "Wrong id";
     }
