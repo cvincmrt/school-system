@@ -1,5 +1,6 @@
 <?php
 require "assets/database.php";
+$conn = connectionDB();
 
 //vytvoreny dotaz na tabulku student
 //isset skontroluje ci dane id bolo nastavene a is_numeric skontroluje ci id je cislo

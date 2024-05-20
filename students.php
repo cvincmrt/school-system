@@ -1,5 +1,6 @@
 <?php
 require "assets/database.php";
+$conn = connectionDB();
 
 //vytvoreny dotaz na tabulku student
     $sql = "SELECT * FROM student";

@@ -1,5 +1,6 @@
 <?php
-$db_host = "localhost";
+function connectionDB() {
+    $db_host = "localhost";
     $db_user = "cvincmrt";
     $db_password = "Cisco1234";
     $db_name = "skola";
@@ -14,5 +15,6 @@ $db_host = "localhost";
     }
 
     //echo "Database connected...";
-
+    return $conn;
+}
 ?>
