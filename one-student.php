@@ -33,7 +33,11 @@ require "assets/student.php";
                 <p>Age:<?php echo $students["age"]; ?></p>
                 <p>Additional information:<?php echo $students["life"]; ?></p>
                 <p>Residence:<?php echo $students["collage"]; ?></p>
-            <?php endif; ?>    
+            <?php endif; ?>  
+
+        </section>
+        <section>
+            <a href="edit-student.php" class="btn">Edit student</a>
         </section>
     </main>
     <?php require "assets/footer.php"; ?>
