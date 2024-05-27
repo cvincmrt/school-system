@@ -7,6 +7,7 @@ require "assets/student.php";
         $students = getStudent($conn, $_GET["id"]);
         //NULL je vyhodnoteny ako false
             if($students){
+                $id = $students["id"];
                 $firstName = $students["first_name"];
                 $secondName = $students["second_name"];
                 $age = $students["age"];
@@ -46,7 +47,7 @@ require "assets/student.php";
             <?php endif; ?>    
         </section>
         <section>
-            <a href="edit-student.php" class="btn">Edit student</a>
+            <a href="edit-student.php?id=<?php echo $id; ?>" class="btn">Edit student</a>
         </section>
     </main>
     <?php require "assets/footer.php"; ?>
