@@ -15,3 +15,11 @@ p{
 label{
     margin-bottom: 2px;
 }
+.btn{
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: chocolate;
+    color:black;
+    text-decoration: none;
+    border-radius: 8px;
+}
