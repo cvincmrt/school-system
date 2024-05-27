@@ -39,23 +39,14 @@ require "assets/student.php";
             <?php if($students === NULL): ?>
                 <p>Student does not exist!!!</p>
             <?php else: ?>
-<<<<<<< HEAD
                 <h2><?php echo $firstName." ".$secondName; ?><h2>
                 <p>Age:<?php echo $age; ?></p>
                 <p>Additional information:<?php echo $life; ?></p>
                 <p>Residence:<?php echo $collage; ?></p>
             <?php endif; ?>    
-=======
-                <h2><?php echo $students["first_name"]." ".$students["second_name"]; ?><h2>
-                <p>Age:<?php echo $students["age"]; ?></p>
-                <p>Additional information:<?php echo $students["life"]; ?></p>
-                <p>Residence:<?php echo $students["collage"]; ?></p>
-            <?php endif; ?>  
-
         </section>
         <section>
             <a href="edit-student.php" class="btn">Edit student</a>
->>>>>>> 7de03f7c9fbc30e583b5067f215a8b8399e6a012
         </section>
     </main>
     <?php require "assets/footer.php"; ?>
