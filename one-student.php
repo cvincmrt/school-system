@@ -5,8 +5,18 @@ require "assets/student.php";
 
     if(isset($_GET["id"]) and is_numeric($_GET["id"])){
         $students = getStudent($conn, $_GET["id"]);
+        //NULL je vyhodnoteny ako false
+            if($students){
+                $firstName = $students["first_name"];
+                $secondName = $students["second_name"];
+                $age = $students["age"];
+                $life = $students["life"];
+                $collage =$students["collage"];
+            }else{
+                die("Student neexistuje");
+            }
     }else{
-        echo "Wrong id";
+        die("Id nieje zadane a student neexistuje");
     }
 
 ?>
@@ -29,10 +39,10 @@ require "assets/student.php";
             <?php if($students === NULL): ?>
                 <p>Student does not exist!!!</p>
             <?php else: ?>
-                <h2><?php echo $students["first_name"]." ".$students["second_name"]; ?><h2>
-                <p>Age:<?php echo $students["age"]; ?></p>
-                <p>Additional information:<?php echo $students["life"]; ?></p>
-                <p>Residence:<?php echo $students["collage"]; ?></p>
+                <h2><?php echo $firstName." ".$secondName; ?><h2>
+                <p>Age:<?php echo $age; ?></p>
+                <p>Additional information:<?php echo $life; ?></p>
+                <p>Residence:<?php echo $collage; ?></p>
             <?php endif; ?>    
         </section>
     </main>
