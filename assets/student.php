@@ -29,8 +29,16 @@ function getStudent($conn, $id){
 
 
 /**
+ * Funkcia zmeni ulozene hodnoty
  * 
+ * @param string $fName - zadaj meno
+ * @param string $sName - zadaj priezvisko
+ * @param integer $age - zadaj vek
+ * @param string $life - zadaj info o ziakovi
+ * @param string $collate - zadaj kde byva ziak
+ * @param integer $id - id ziaka
  * 
+ * @return void -funkcia nema navratovu hodnotu
  * 
  */
 
@@ -51,7 +59,7 @@ function updateStudent($conn, $fName, $sName, $age, $life, $collage, $id) {
             mysqli_stmt_bind_param($stmt, "ssissi", $fName, $sName, $age, $life, $collage, $id);
 
             if(mysqli_stmt_execute($stmt)){
-                echo "info prebehlo OK";
+                header("Location:students.php");
             }
        }
 
