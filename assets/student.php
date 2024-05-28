@@ -1,4 +1,6 @@
 <?php
+require "url.php";
+
 /**
  * Funkcia vrati jedneho studenta
  * 
@@ -59,7 +61,8 @@ function updateStudent($conn, $fName, $sName, $age, $life, $collage, $id) {
             mysqli_stmt_bind_param($stmt, "ssissi", $fName, $sName, $age, $life, $collage, $id);
 
             if(mysqli_stmt_execute($stmt)){
-                header("Location:students.php");
+                //header("Location:one-student.php?id=$id");
+                redirectUrl("/clone/school-system/one-student.php?id=$id");
             }
        }
 
