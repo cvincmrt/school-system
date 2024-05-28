@@ -28,24 +28,7 @@ require "assets/student.php";
        $formLife =  $_POST['formLife'];
        $formCollage = $_POST['formCollage'];
 
-       $sql = "UPDATE student SET first_name = ?,
-                                  second_name = ?,
-                                  age = ?,
-                                  life = ?,
-                                  collage = ?
-               WHERE id = ?";
-
-       $stmt = mysqli_prepare($conn, $sql);
-
-       if ($stmt === false) {
-            echo mysqli_error($conn);
-       }else{
-            mysqli_stmt_bind_param($stmt, "ssissi", $formFirstName, $formSecondName, $formAge, $formLife, $formCollage, $id);
-
-            if(mysqli_stmt_execute($stmt)){
-                echo "info prebehlo OK";
-            }
-       }
+       updateStudent($conn, $formFirstName, $formSecondName, $formAge, $formLife, $formCollage, $id); 
     }
 
 ?>
