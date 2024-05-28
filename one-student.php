@@ -3,11 +3,22 @@ require "assets/database.php";
 $conn = connectionDB();
 require "assets/student.php";
 
-    if(isset($_GET["id"]) and is_numeric($_GET["id"])){
-        $students = getStudent($conn, $_GET["id"]);
-    }else{
-        echo "Wrong id";
-    }
+if(isset($_GET["id"]) and is_numeric($_GET["id"])){
+    $students = getStudent($conn, $_GET["id"]);
+    //NULL je vyhodnoteny ako false
+        if($students){
+            $id = $students["id"];
+            $firstName = $students["first_name"];
+            $secondName = $students["second_name"];
+            $age = $students["age"];
+            $life = $students["life"];
+            $collage =$students["collage"];
+        }else{
+            die("Student neexistuje");
+        }
+}else{
+    die("Id nieje zadane a student neexistuje");
+}
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +47,7 @@ require "assets/student.php";
             <?php endif; ?>    
         </section>
         <section>
-            <a href="edit-student.php" class="btn">Edit student</a>
+            <a href="edit-student.php?id=<?php echo $id; ?>" class="btn">Edit student</a>
         </section>
     </main>
     <?php require "assets/footer.php"; ?>
