@@ -1,5 +1,7 @@
 <?php
+
 require "url.php";
+
 /**
  * Funkcia vrati vsetkích ziakov
  * 
@@ -22,10 +24,6 @@ function getAllStudent($conn){
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 }
-
-
-
-
 
 /**
  * Funkcia vrati jedneho studenta
@@ -115,4 +113,37 @@ function deleteStudent($conn,$id){
         }
 
     }
+}
+
+/**
+ * Funkcia na vytvorenie studenta 
+ * 
+ * @param object $conn - spojenie s databazou
+ * 
+ * @return void
+ */
+function createStudent($conn,$formFirstName, $formSecondName, $formAge, $formLife, $formCollage){
+    //ochrana pred sql injection. Otazniky sluzia ako placeholder, cize kazdy otaznik drzi miesto premennej, ktora sa tam nacita neskor
+    $sql = "INSERT INTO student (first_name, second_name, age, life, collage) VALUES (?, ?, ?, ?, ?)";
+
+    //príprava na odoslanie dotazu
+           $statement = mysqli_prepare($conn, $sql);
+    
+           if($statement === false){
+                echo mysqli_error($conn);
+           }else {
+                //funkcia vymeni otazniky za hodnoty. Musim definovat datove typy stlpcov napr.:first_name je string cize (s), second_name je (s),age je (i)
+                mysqli_stmt_bind_param($statement, "ssiss", $formFirstName, $formSecondName, $formAge, $formLife, $formCollage);
+                
+                //odoslanie dotazu
+                if (mysqli_stmt_execute($statement)) {
+                        $last_id = mysqli_insert_id($conn);
+                        //echo "Student was saved with id = $last_id";
+                       // header("Location:one-student.php?id=$last_id");
+                        redirectUrl("/clone/school-system/one-student.php?id=$last_id");
+                }else {
+                    echo mysqli_stmt_error($statement);
+                }
+           
+           }
 }
