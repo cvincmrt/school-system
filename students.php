@@ -1,19 +1,10 @@
 <?php
 require "assets/database.php";
+require "assets/student.php";
+
 $conn = connectionDB();
 
-//vytvoreny dotaz na tabulku student
-    $sql = "SELECT * FROM student";
-
-//odosleme dotaz na databazu a ta mi vrati objekt result    
-    $result = mysqli_query($conn, $sql);
-
-    if ($result === false) {
-        echo mysqli_error($conn);
-    }else{
-//prevediem si objekt na pole v poli
-        $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    }
+$students = getAllStudent($conn);
   
 ?>
 

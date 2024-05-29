@@ -1,5 +1,31 @@
 <?php
 require "url.php";
+/**
+ * Funkcia vrati vsetkích ziakov
+ * 
+ * @param object $conn - spojenie s databazou
+ * 
+ * @return array -vracia pole objektov 
+ */
+function getAllStudent($conn){
+
+//vytvoreny dotaz na tabulku student
+    $sql = "SELECT * FROM student";
+
+//odosleme dotaz na databazu a ta mi vrati objekt result    
+    $result = mysqli_query($conn, $sql);
+
+    if ($result === false) {
+        echo mysqli_error($conn);
+    }else{
+//prevediem si objekt na pole v poli
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+}
+
+
+
+
 
 /**
  * Funkcia vrati jedneho studenta
@@ -30,7 +56,7 @@ function getStudent($conn, $id){
 
 
 /**
- * Funkcia zmeni ulozene hodnoty
+ * Funkcia na update studenta
  * 
  * @param string $fName - zadaj meno
  * @param string $sName - zadaj priezvisko
