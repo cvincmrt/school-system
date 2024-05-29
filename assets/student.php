@@ -9,7 +9,6 @@ require "url.php";
  * 
  * @return asociativne pole, ktore obsahuje jedneho konkretneho studenta 
  */
-
 function getStudent($conn, $id){
 
     $sql = "SELECT * FROM student WHERE id = ?";
@@ -43,7 +42,6 @@ function getStudent($conn, $id){
  * @return void -funkcia nema navratovu hodnotu
  * 
  */
-
 function updateStudent($conn, $fName, $sName, $age, $life, $collage, $id) {
 
     $sql = "UPDATE student SET first_name = ?,
@@ -66,4 +64,29 @@ function updateStudent($conn, $fName, $sName, $age, $life, $collage, $id) {
             }
        }
 
+}
+
+/**
+ * Funkcia na zmazanie studenta
+ * 
+ * @param integer $id - idecko ktore sa ma zmazat
+ * @param object $conn - spojenie s databazou
+ * 
+ * @return void
+ */
+function deleteStudent($conn,$id){
+    $sql = "DELETE FROM student WHERE id = ?";
+    
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if ($stmt === false) {
+        echo mysqli_error($conn);
+    }else{
+        mysqli_stmt_bind_param($stmt, "i", $id);
+
+        if (mysqli_stmt_execute($stmt)) {
+            redirectUrl("/clone/school-system/students.php");
+        }
+
+    }
 }

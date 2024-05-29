@@ -18,8 +18,11 @@ label{
 .btn{
     display: inline-block;
     padding: 5px 20px;
-    background-color: chocolate;
+    background-color: lime;
     color:black;
     text-decoration: none;
     border-radius: 8px;
+}
+.btn:last-child{
+    background-color: red;
 }
