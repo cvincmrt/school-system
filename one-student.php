@@ -48,6 +48,7 @@ if(isset($_GET["id"]) and is_numeric($_GET["id"])){
         </section>
         <section>
             <a href="edit-student.php?id=<?php echo $id; ?>" class="btn">Edit student</a>
+            <a href="delete-student.php?id=<?php echo $id; ?>" class="btn">Delete student</a>
         </section>
     </main>
     <?php require "assets/footer.php"; ?>

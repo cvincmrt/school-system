@@ -21,15 +21,15 @@ require "assets/student.php";
         die("Id nieje zadane a student neexistuje");
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-       $formFirstName = $_POST['formFirstName'];
-       $formSecondName = $_POST['formSecondName'];
-       $formAge = $_POST['formAge'];
-       $formLife =  $_POST['formLife'];
-       $formCollage = $_POST['formCollage'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $formFirstName = $_POST['formFirstName'];
+    $formSecondName = $_POST['formSecondName'];
+    $formAge = $_POST['formAge'];
+    $formLife =  $_POST['formLife'];
+    $formCollage = $_POST['formCollage'];
 
-       updateStudent($conn, $formFirstName, $formSecondName, $formAge, $formLife, $formCollage, $id); 
-    }
+    updateStudent($conn, $formFirstName, $formSecondName, $formAge, $formLife, $formCollage, $id); 
+}
 
 ?>
 
