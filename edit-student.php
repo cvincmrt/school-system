@@ -5,7 +5,9 @@ $conn = connectionDB();
 require "assets/student.php";
 
     if(isset($_GET["id"]) and is_numeric($_GET["id"])){
+
         $students = getStudent($conn, $_GET["id"]);
+        
         //NULL je vyhodnoteny ako false
             if($students){
                 $id = $students["id"];
@@ -46,15 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php require "assets/header.php"; ?>
 
     <main>
-        <section-main-title>
+        <section class="main-title">
             <h2>Edit Student</h2>
         </section>
-
-        <?php require "assets/formular-student.php"; ?>
-
-
-
-
+        <section class="form-student">
+            <?php require "assets/formular-student.php"; ?>
         </section>
     </main>
 

@@ -9,7 +9,7 @@
 <body>
     <?php require "assets/header.php"; ?>
     <main>
-        <section-main-title>
+        <section class="main-title">
             <h2>New system school</h2>
         </section>
 

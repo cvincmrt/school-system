@@ -19,7 +19,7 @@ $students = getAllStudent($conn);
 <body>
     <?php require "assets/header.php"; ?>
     <main>
-        <section-main-title>
+        <section class="main-title">
             <h2>List of students</h2>
         </section>
 

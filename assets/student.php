@@ -9,10 +9,13 @@ require "url.php";
  * 
  * @return array -vracia pole objektov 
  */
-function getAllStudent($conn){
+//$columns su na zadanie nazvov stlpcov a ked stpce nezadam tak tam prirad hviezdicku*  
+
+function getAllStudent($conn, $columns = "*"){
 
 //vytvoreny dotaz na tabulku student
-    $sql = "SELECT * FROM student";
+
+    $sql = "SELECT $columns FROM student";
 
 //odosleme dotaz na databazu a ta mi vrati objekt result    
     $result = mysqli_query($conn, $sql);
@@ -33,9 +36,9 @@ function getAllStudent($conn){
  * 
  * @return asociativne pole, ktore obsahuje jedneho konkretneho studenta 
  */
-function getStudent($conn, $id){
+function getStudent($conn, $id, $columns = "*"){
 
-    $sql = "SELECT * FROM student WHERE id = ?";
+    $sql = "SELECT $columns FROM student WHERE id = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
 

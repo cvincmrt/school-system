@@ -32,7 +32,7 @@ if(isset($_GET["id"]) and is_numeric($_GET["id"])){
 <body>
     <?php require "assets/header.php"; ?>
     <main>
-        <section-main-title>
+        <section class="main-title">
             <h2>Student data</h2>
         </section>
 

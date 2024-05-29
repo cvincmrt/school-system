@@ -24,7 +24,6 @@
   
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,7 @@
     <?php require "assets/header.php"; ?>
 
     <main>
-        <section-main-title>
+        <section class="main-title">
             <h2>Add Student</h2>
         </section>
         <section class="add-student-form">
