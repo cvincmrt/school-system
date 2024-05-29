@@ -12,14 +12,10 @@
         <section class="main-title">
             <h2>New system school</h2>
         </section>
-
         <section>
-
             <a href="students.php">List of students</a>
         </section>
     </main>
     <?php require "assets/footer.php"; ?>
-    
-    
 </body>
 </html>

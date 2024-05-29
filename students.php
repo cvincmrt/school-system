@@ -4,7 +4,7 @@ require "assets/student.php";
 
 $conn = connectionDB();
 
-$students = getAllStudent($conn);
+$students = getAllStudent($conn,"id, first_name, second_name");
   
 ?>
 
