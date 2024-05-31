@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="query-css/header-query.css">
     <script src="https://kit.fontawesome.com/9b7133f7b6.js" crossorigin="anonymous"></script>
     <title>School System</title>
 </head>
