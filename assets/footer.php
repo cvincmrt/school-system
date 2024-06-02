@@ -1,3 +1,3 @@
 <footer>
-        <p>&copy; School system new generation..</p>
+        <p>&copy; School of wizards 2024. All rights reserved.</p>
 </footer>

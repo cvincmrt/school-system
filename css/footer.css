@@ -1,0 +1,11 @@
+footer{
+    background-color: #000;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    padding: 1rem;
+}
+footer p{
+    text-align: center;
+}
