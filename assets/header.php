@@ -1,7 +1,9 @@
 <header>
     
         <div class="logo">
-            <img src="img/hogwarts-logo.png" alt="logo">
+            <a href="index.php">
+                <img src="img/hogwarts-logo.png" alt="logo">
+            </a>
         </div>
         <nav>
             <ul>

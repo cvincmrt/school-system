@@ -1,0 +1,12 @@
+@media(max-width:550px){
+    .main-heading h1{
+        font-weight: 500;
+        line-height: 4rem;
+        font-size: 3rem;
+    
+    }
+    .main-heading h2{
+        font-weight: 300;
+        font-size: 2rem;
+    }
+}
