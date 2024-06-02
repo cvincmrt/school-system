@@ -13,7 +13,11 @@ $students = getAllStudent($conn,"id, first_name, second_name");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="query-css/header-query.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://kit.fontawesome.com/9b7133f7b6.js" crossorigin="anonymous"></script>
     <title>List of students</title>
 </head>
 <body>
@@ -34,7 +38,8 @@ $students = getAllStudent($conn,"id, first_name, second_name");
         <?php endif; ?>    
     </main>
     <?php require "assets/footer.php"; ?>
-    <a href="index.php">Back to homepage</a>
+    <script src="js/header.js"></script>
+    
    
 </body>
 </html>
