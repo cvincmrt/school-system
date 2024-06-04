@@ -1,6 +1,14 @@
 <?php
 require "../assets/database.php";
 require "../assets/student.php";
+require "../assets/auth.php";
+
+session_start();
+
+//otocena podmienka
+if ( !isLoggedIn() ) {
+    die("Unauthorized access!!!");
+}
 
 $conn = connectionDB();
 

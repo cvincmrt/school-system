@@ -8,6 +8,7 @@
         <nav>
             <ul>
                 <li><a href="index.php" class="active">Home</a></li>
+                <li><a href="registration-form.php">Registration</a></li>
             </ul>
         </nav> 
         <div class="nav-icon">
