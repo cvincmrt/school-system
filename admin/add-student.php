@@ -15,7 +15,7 @@
        $formLife =  $_POST['formLife'];
        $formCollage = $_POST['formCollage'];
        
-       require "assets/database.php";
+       require "../assets/database.php";
        $conn = connectionDB();
        
        createStudent($conn,$formFirstName,$formSecondName,$formAge,$formLife,$formCollage);
