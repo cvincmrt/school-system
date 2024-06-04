@@ -87,7 +87,7 @@ function updateStudent($conn, $fName, $sName, $age, $life, $collage, $id) {
 
             if(mysqli_stmt_execute($stmt)){
                 //header("Location:one-student.php?id=$id");
-                redirectUrl("/clone/school-system/one-student.php?id=$id");
+                redirectUrl("/clone/school-system/admin/one-student.php?id=$id");
             }
        }
 
@@ -112,7 +112,7 @@ function deleteStudent($conn,$id){
         mysqli_stmt_bind_param($stmt, "i", $id);
 
         if (mysqli_stmt_execute($stmt)) {
-            redirectUrl("/clone/school-system/students.php");
+            redirectUrl("/clone/school-system/admin/students.php");
         }
 
     }
@@ -143,7 +143,7 @@ function createStudent($conn,$formFirstName, $formSecondName, $formAge, $formLif
                         $last_id = mysqli_insert_id($conn);
                         //echo "Student was saved with id = $last_id";
                        // header("Location:one-student.php?id=$last_id");
-                        redirectUrl("/clone/school-system/one-student.php?id=$last_id");
+                        redirectUrl("/clone/school-system/admin/one-student.php?id=$last_id");
                 }else {
                     echo mysqli_stmt_error($statement);
                 }

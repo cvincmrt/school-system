@@ -8,8 +8,6 @@
         <nav>
             <ul>
                 <li><a href="index.php" class="active">Home</a></li>
-                <li><a href="students.php">All students</a></li>
-                <li><a href="add-student.php">Add student</a></li>
             </ul>
         </nav> 
         <div class="nav-icon">
