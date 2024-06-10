@@ -1,5 +1,13 @@
 <?php
     require "../assets/student.php";
+    require "../assets/auth.php";
+
+    session_start();
+
+    //otocena podmienka
+    if ( !isLoggedIn() ) {
+        die("Unauthorized access!!!");
+    }
 
     $formFirstName = null;
     $formSecondName = null;

@@ -2,7 +2,7 @@
 /**
  * Overuje ci je uzivatel prihlaseny alebo nie
  * 
- * @return boolean True ak je uzivatel prihlaseny inak false
+ * @return boolean true ak je uzivatel prihlaseny inak false
  */
 
 function isLoggedIn(){
