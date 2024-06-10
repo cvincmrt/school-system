@@ -9,6 +9,7 @@
             <ul>
                 <li><a href="students.php" class="active">List students</a></li>
                 <li><a href="add-student.php" >Add students</a></li>
+                <li><a href="logout.php" >Logout</a></li>
             </ul>
         </nav> 
         <div class="nav-icon">

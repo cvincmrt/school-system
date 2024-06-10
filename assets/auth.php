@@ -6,5 +6,5 @@
  */
 
 function isLoggedIn(){
-    return isset($_SESSION["is_logged_in"]) && $_SESSION["is_logged_in"]; 
+    return isset($_SESSION["is_logged_in"]) and $_SESSION["is_logged_in"]; 
 }
