@@ -19,8 +19,8 @@
             <h1>Login</h1>
             
             <form action="admin/after-login.php" method="POST">
-                <input type="email" name="email" id="email" placeholder="hrasko@gmail.com" required><br>
-                <input type="password" name="password" id="password" placeholder="Heslo" required><br><br>
+                <input type="email" name="emailF" id="email" placeholder="hrasko@gmail.com" required><br>
+                <input type="password" name="passwordF" id="password" placeholder="Heslo" required><br><br>
                 <input type="submit" value="Login">
             </form>
         </section>
