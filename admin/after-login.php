@@ -13,7 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["emailF"];
     $password = $_POST["passwordF"];
 
-    echo $email."========>>>".$password;
+    //overovanie ci heslo je rovnake ako hash z databazy
+    //podmienka vracia true pokial sa hash z databazy rovna heslu zadanemu vo formulari
 
+    if(authUser($conn, $email, $password)){
+        echo "User je overeny";
+    }else{
+        echo "User is deat!!!!";
+    }
+    
 
 }
